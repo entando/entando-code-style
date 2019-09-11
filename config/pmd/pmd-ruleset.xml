@@ -16,7 +16,6 @@
   </rule>
 
   <rule ref="category/java/codestyle.xml">
-    <exclude name="LinguisticNaming"/>
     <exclude name="TooManyStaticImports"/>
     <exclude name="OnlyOneReturn"/>    
     <exclude name="ShortVariable"/>
