@@ -11,10 +11,14 @@ http://pmd.sourceforge.net/ruleset/2.0.0 ">
   </description>
 
   <rule ref="category/java/bestpractices.xml">
-    <exclude name="AbstractClassWithoutAbstractMethod"/>
+    <exclude name="AbstractClassWithoutAbstractMethod" />
+    <exclude name="JUnitAssertionsShouldIncludeMessage" />
+    <exclude name="JUnitTestContainsTooManyAsserts" />
   </rule>
 
   <rule ref="category/java/codestyle.xml">
+    <exclude name="TooManyStaticImports"/>
+    <exclude name="OnlyOneReturn"/>    
     <exclude name="ShortVariable"/>
     <exclude name="ShortClassName"/>
     <exclude name="LongVariable"/>
