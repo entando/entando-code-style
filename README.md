@@ -25,3 +25,43 @@ Choose the Eclipse configuration file in config/eclipse-java-entando-style.xml
 After that go to **Window -> Preferences -> Java -> Code Style -> Organize Imports** and
 remove everything from the Field **Define the sorting order of import...**
 
+## PMD version
+
+The Maven PMD Plugin does not use the latest PMD version. At the time of this writing,
+maven-pmd-plugin version 3.12.0 uses PMD 6.13.0. To use the latest PMD version, add the 
+following configuration to `pom.xml`:
+
+```xml
+<project>
+  <properties>
+    <pmd-version>...choose your version...</pmd-version>
+  </properties>
+...
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>3.12.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-core</artifactId>
+              <version>${pmd-version}</version>
+            </dependency>
+            <dependency>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-java</artifactId>
+              <version>${pmd-version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+...
+</project>
+``` 
+
+Get the latest PMD version from their homepage: https://pmd.github.io/
